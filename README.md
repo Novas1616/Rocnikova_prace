@@ -51,7 +51,8 @@ Usazení Tlačítek: Tlačítka byla zacvaknuta nebo zašroubována do připrave
 Kabeláž: Připájení propojovacích vodičů k tlačítkům a následné připojení k určeným pinům na desce Raspberry Pi Pico W.
 Uložení Elektroniky: Deska mikrokontroléru byla bezpečně uložena uvnitř pouzdra a fixována, aby nedocházelo k pohybu a riziku zkratu.
 Uzavření Pouzdra: Pouzdro bylo uzavřeno pomocí tištěného spodního víka.
-Výhoda 3D Tisku: Umožnil mi přesně definovat rozestupy tlačítek, úhel sklonu panelu a implementovat upevňovací prvky, což by bylo při použití univerzální krabičky mnohem složitější a méně estetické.
+Výhoda 3D Tisku: Umožnil mi přesně definovat rozestupy tlačítek, úhel sklonu panelu, což by bylo při použití univerzální krabičky nebylo ožné dosáhnout.
+
 
 
 Citace:
