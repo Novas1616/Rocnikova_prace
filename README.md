@@ -4,6 +4,13 @@ Macro klávesnice / button box pro hry
 
 Jako svůj cíl pro letošní ročníkovou práci jsem si vybral tvorbu vlasní macro klávesnice. Vzhledem k cenám takových klávesnic a modulů jsem se rozhodl pro vytvoření vlastní s možností přizpůsobení pro moje konkrétní potřeby. Cílem této práce je navrhnout a zpracovat klávesnici, která urychlí a usnadní ovládání závodních her a zároveň nabídne využití pro konkrétní aplikace.
 
+Cíle Práce:
+Hardwarová realizace: Vyrobit funkční modulární klávesnici založenou na mikrokontroléru s podporou USB HID.
+
+Softwarová implementace: Naprogramovat mikrokontrolér tak, aby při stisku fyzického tlačítka odeslal předdefinovanou sekvenci kláves operačnímu systému.
+
+Funkčnost: Ověřit spolehlivost makra při použití ve hře a při spouštění standardních Windows Hotkeys.
+
 
 Citace:
 How to Build a Pico Macro Pad. Online. 2021. Dostupné z: https://www.hackster.io/1NextPCB/how-to-build-a-pico-macro-pad-3638e6. [cit. 2025-12-01].
