@@ -1,9 +1,11 @@
 Ročníková práce
 
 Autor: Michal Novák
+
 Školní rok: 2025/2026
 
 Tvorba vlastní macro klávesnice / Button boxu pro hry
+
 Úvod
 
 Tématem mé ročníkové práce je návrh a tvorba vlastní macro klávesnice — často označované jako button box — která bude sloužit pro ovládání závodních her a dalších aplikací. Cílem je vytvořit zařízení, které umožní odesílání klávesových zkratek nebo sekvencí kláves jediným stiskem fyzického tlačítka.
@@ -11,6 +13,7 @@ Tématem mé ročníkové práce je návrh a tvorba vlastní macro klávesnice �
 Rozhodl jsem se pro tento projekt proto, že mě dlouhodobě zajímá elektronika, programování mikrokontrolérů a využití 3D tisku v praxi. Komerční macro panely jsou často drahé nebo nenabízejí takové možnosti přizpůsobení, jaké potřebuji při hraní závodních simulátorů. Vytvořením vlastního řešení získám praktické zkušenosti v několika technických oblastech.
 
 1. Cíle ročníkové práce
+   
 1.1 Hardwarová část
 
 vybrat vhodný mikrokontrolér
