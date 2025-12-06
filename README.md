@@ -47,6 +47,7 @@ provést dlouhodobé testy spolehlivosti
 analyzovat případné problémy a optimalizovat kód
 
 2. Teoretické pozadí
+   
 2.1 Makra a jejich využití
 
 Makro je sekvence stisků kláves nebo příkazů, která se vykoná automaticky při stisku tlačítka. Ve hrách se používá například k přepínání kamer, resetu vozidla, zapnutí světel nebo aktivaci funkcí bez nutnosti mačkat více kláves najednou.
@@ -79,7 +80,24 @@ možnost připojení až desítek vstupů
 
 Tento mikrokontrolér je ideální pro malé HID projekty jako moje makro klávesnice.
 
+2.4 CircuitPython
+
+Pro programování mikrokontroléru Pico W používám CircuitPython, což je verze programovacího jazyka Python optimalizovaná pro mikrokontroléry. CircuitPython umožňuje rychlý a přehledný vývoj programu přímo na zařízení, bez nutnosti složitého nízkoúrovňového programování. Díky tomu je možné snadno ovládat vstupy a výstupy, číst stisky tlačítek a odesílat je do počítače jako klávesové zkratky.
+
+Použití CircuitPython mi umožňuje:
+
+rychle implementovat funkce pro ovládání tlačítek a makra,
+
+využít připravené knihovny, například adafruit_hid, pro emulaci klávesnice a myši,
+
+jednoduše řešit problémy se zákmity tlačítek (debounce) a správné odesílání sekvencí kláves,
+
+testovat a upravovat program během vývoje, což urychluje ladění a ověřování funkčnosti.
+
+Díky CircuitPythonu jsem mohl provést první praktické testy tlačítka ještě před samotným sestavením celé krabičky, a ověřit tak základní fungování softwaru a komunikaci přes USB HID.
+
 3. Návrh zařízení
+
 3.1 Rozmístění tlačítek
 
 Zařízení bude mít celkem 6 tlačítek, každé přiřazené k jiné funkci. Rozmístění je navrženo tak, aby bylo pohodlné při používání jednou rukou.
