@@ -204,3 +204,5 @@ A made a Raspberry Pi Pico Macro Board!. Online. 2020. Dostupné z: https://www.
 Raspberry Pi Pico - DIY Macro Keyboard. Online. Novaspirit Tech. 2021. Dostupné z: https://www.youtube.com/watch?v=aEWptdD32iA. [cit. 2025-12-01].
 
 Wired USB keyboard, mouse, controller to Bluetooth w/ $6 Raspberry Pi Pico W. Online. Kenjinerd. 2025. Dostupné z: https://www.youtube.com/watch?v=YuHbTrccshw. [cit. 2025-12-01].
+
+Raspberry Pi. Online. Dostupné z: https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#pico-1-family. [cit. 2025-12-13].
