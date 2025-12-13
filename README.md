@@ -195,3 +195,11 @@ K prvnímu pololetí jsem splnil všechny plánované softwarové cíle a mám f
 
 Druhé pololetí bude zaměřené hlavně na praktickou konstrukci krabičky, 3D tisk a fyzické zapojení celého systému. Po dokončení očekávám, že zařízení bude plně funkční a použitelné v závodních hrách i běžném použití.
 
+Citace:
+How to Build a Pico Macro Pad. Online. 2021. Dostupné z: https://www.hackster.io/1NextPCB/how-to-build-a-pico-macro-pad-3638e6. [cit. 2025-12-01].
+
+A made a Raspberry Pi Pico Macro Board!. Online. 2020. Dostupné z: https://www.reddit.com/r/raspberry_pi/comments/n2s3i8/a_made_a_raspberry_pi_pico_macro_board/. [cit. 2025-12-01].
+
+Raspberry Pi Pico - DIY Macro Keyboard. Online. Novaspirit Tech. 2021. Dostupné z: https://www.youtube.com/watch?v=aEWptdD32iA. [cit. 2025-12-01].
+
+Wired USB keyboard, mouse, controller to Bluetooth w/ $6 Raspberry Pi Pico W. Online. Kenjinerd. 2025. Dostupné z: https://www.youtube.com/watch?v=YuHbTrccshw. [cit. 2025-12-01].
