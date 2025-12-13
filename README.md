@@ -101,11 +101,10 @@ Použiji interní PULL-UP rezistory, takže není potřeba externí elektronika.
 
 ### 3.3 3D tištěné pouzdro
 
-Pouzdro mám navržené ve Fusion 360, ale tisk ještě neproběhl. Návrh aktuálně obsahuje:
+Návrh pouzra zatím není dokončený, návrh probíhá ve Fusion 360, tisk ještě neproběhl. Návrh aktuálně obsahuje:
 
 - přední panel s otvory pro tlačítka
-- vnitřní držáky na desku Pico W
-- prostor pro vedení kabeláže
+
 - zadní víko na šroubky
 
 V dalším období budu pouzdro dolaďovat a poté vytisknu finální verzi.
@@ -164,11 +163,10 @@ Navržené hardware řešení (teoreticky):
 - rozvržené piny
 - určený typ tlačítek
 - proběhl první test odesílání macra do hry s testovacím kódem
-- připravený CAD model pouzdra (zatím bez tisku)
+
 
 Zatím chybí fyzická realizace:
-
-- 3D tisk pouzdra
+- dokončení návrhu a 3D tisk pouzdra
 - pájení kabeláže
 - montáž celku
 
