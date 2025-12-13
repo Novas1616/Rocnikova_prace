@@ -1,0 +1,69 @@
+import board
+import digitalio
+import time
+import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keycode import Keycode
+
+kb = Keyboard(usb_hid.devices)
+
+
+btn1 = digitalio.DigitalInOut(board.GP0)  # Ctrl+Alt+1
+btn2 = digitalio.DigitalInOut(board.GP1)  # Ctrl+Alt+2
+btn3 = digitalio.DigitalInOut(board.GP2)  # Ctrl+Alt+3
+btn4 = digitalio.DigitalInOut(board.GP3)  # Ctrl+Alt+4
+btn5 = digitalio.DigitalInOut(board.GP4)  # Ctrl+Alt+5
+btn6 = digitalio.DigitalInOut(board.GP5)  # Ctrl+Alt+6
+
+for btn in (btn1, btn2, btn3, btn4, btn5, btn6):
+    btn.switch_to_input(pull=digitalio.Pull.UP)
+
+last1 = last2 = last3 = last4 = last5 = last6 = True
+
+
+while True:
+    v1 = btn1.value
+    v2 = btn2.value
+    v3 = btn3.value
+    v4 = btn4.value
+    v5 = btn5.value
+    v6 = btn6.value
+
+    if last1 and not v1:
+        kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.ONE)
+        kb.release_all()
+        time.sleep(0.15)
+
+    if last2 and not v2:
+        kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.TWO)
+        kb.release_all()
+        time.sleep(0.15)
+
+    if last3 and not v3:
+        kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.THREE)
+        kb.release_all()
+        time.sleep(0.15)
+
+    if last4 and not v4:
+        kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.FOUR)
+        kb.release_all()
+        time.sleep(0.15)
+
+    if last5 and not v5:
+        kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.FIVE)
+        kb.release_all()
+        time.sleep(0.15)
+
+    if last6 and not v6:
+        kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.SIX)
+        kb.release_all()
+        time.sleep(0.15)
+
+    last1 = v1
+    last2 = v2
+    last3 = v3
+    last4 = v4
+    last5 = v5
+    last6 = v6
+
+    time.sleep(0.01)
