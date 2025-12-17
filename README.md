@@ -7,7 +7,7 @@
 
 ---
 
-## Úvod
+## 1. Úvod
 
 Tématem mé ročníkové práce je návrh a tvorba vlastní macro klávesnice — často označované jako button box — která bude sloužit pro ovládání závodních her a dalších aplikací. Cílem je vytvořit zařízení, které umožní odesílání klávesových zkratek nebo sekvencí kláves jediným stiskem fyzického tlačítka.
 
@@ -41,7 +41,7 @@ Rozhodl jsem se pro tento projekt proto, že mě dlouhodobě zajímá elektronik
 
 ---
 
-## Teoretické pozadí
+## 2. Teoretické pozadí
 
 ### 2.1 Makra a jejich využití
 
@@ -84,7 +84,7 @@ Díky CircuitPythonu jsem mohl provést první praktické testy tlačítka ješt
 
 ---
 
-## Návrh zařízení
+## 3. Návrh zařízení
 
 ### 3.1 Rozmístění tlačítek
 
@@ -111,7 +111,7 @@ V dalším období budu pouzdro dolaďovat a poté vytisknu finální verzi.
 
 ---
 
-## Softwarová část — hotová k pololetí
+## 4. Softwarová část — hotová k pololetí
 
 K pololetí mám hotovou prakticky kompletní softwarovou část projektu, což byla jedna z hlavních priorit první části roku.
 
@@ -148,7 +148,7 @@ Chová se přesně podle očekávání.
 
 ---
 
-## Současný stav projektu k pololetí
+## 5. Současný stav projektu k pololetí
 
 V této fázi mám:
 
@@ -174,7 +174,7 @@ Toto bude hlavní náplní druhého pololetí.
 
 ---
 
-## Další postup (druhé pololetí)
+## 6. Další postup (druhé pololetí)
 
 V druhé části školního roku plánuji:
 
@@ -189,7 +189,7 @@ V druhé části školního roku plánuji:
 
 ---
 
-## Závěr
+## 7. Závěr
 
 K prvnímu pololetí jsem splnil všechny plánované softwarové cíle a mám funkční základ celého zařízení. Button box zatím není fyzicky sestavený, ale hardwarová část je navržená a připravená k realizaci.
 
@@ -202,6 +202,8 @@ How to Build a Pico Macro Pad. Online. 2021. Dostupné z: https://www.hackster.i
 A made a Raspberry Pi Pico Macro Board!. Online. 2020. Dostupné z: https://www.reddit.com/r/raspberry_pi/comments/n2s3i8/a_made_a_raspberry_pi_pico_macro_board/. [cit. 2025-12-01].
 
 Raspberry Pi Pico - DIY Macro Keyboard. Online. Novaspirit Tech. 2021. Dostupné z: https://www.youtube.com/watch?v=aEWptdD32iA. [cit. 2025-12-01].
+
+GOOGLE. Gemini [software]. Verze z 17. prosince 2025. Mountain View: Google, 2025 [cit. 2025-12-17]. Dostupné z: https://gemini.google.com
 
 Wired USB keyboard, mouse, controller to Bluetooth w/ $6 Raspberry Pi Pico W. Online. Kenjinerd. 2025. Dostupné z: https://www.youtube.com/watch?v=YuHbTrccshw. [cit. 2025-12-01].
 
