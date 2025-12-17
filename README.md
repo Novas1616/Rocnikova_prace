@@ -7,7 +7,7 @@
 
 ---
 
-## 1. Úvod
+## Úvod
 
 Tématem mé ročníkové práce je návrh a tvorba vlastní macro klávesnice — často označované jako button box — která bude sloužit pro ovládání závodních her a dalších aplikací. Cílem je vytvořit zařízení, které umožní odesílání klávesových zkratek nebo sekvencí kláves jediným stiskem fyzického tlačítka.
 
@@ -15,7 +15,7 @@ Rozhodl jsem se pro tento projekt proto, že mě dlouhodobě zajímá elektronik
 
 ---
 
-## Cíle ročníkové práce
+## 1. Cíle ročníkové práce
 
 ### 1.1 Hardwarová část
 
@@ -189,7 +189,7 @@ V druhé části školního roku plánuji:
 
 ---
 
-## 7. Závěr
+## Závěr
 
 K prvnímu pololetí jsem splnil všechny plánované softwarové cíle a mám funkční základ celého zařízení. Button box zatím není fyzicky sestavený, ale hardwarová část je navržená a připravená k realizaci.
 
