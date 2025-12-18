@@ -8,12 +8,12 @@ from adafruit_hid.keycode import Keycode
 kb = Keyboard(usb_hid.devices)
 
 
-btn1 = digitalio.DigitalInOut(board.GP0)  # Ctrl+Alt+1
-btn2 = digitalio.DigitalInOut(board.GP1)  # Ctrl+Alt+2
-btn3 = digitalio.DigitalInOut(board.GP2)  # Ctrl+Alt+3
-btn4 = digitalio.DigitalInOut(board.GP3)  # Ctrl+Alt+4
-btn5 = digitalio.DigitalInOut(board.GP4)  # Ctrl+Alt+5
-btn6 = digitalio.DigitalInOut(board.GP5)  # Ctrl+Alt+6
+btn1 = digitalio.DigitalInOut(board.GP0)  
+btn2 = digitalio.DigitalInOut(board.GP1)  
+btn3 = digitalio.DigitalInOut(board.GP2)  
+btn4 = digitalio.DigitalInOut(board.GP3)  
+btn5 = digitalio.DigitalInOut(board.GP4)  
+btn6 = digitalio.DigitalInOut(board.GP5)  
 
 for btn in (btn1, btn2, btn3, btn4, btn5, btn6):
     btn.switch_to_input(pull=digitalio.Pull.UP)
