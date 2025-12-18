@@ -99,6 +99,11 @@ Každé tlačítko bude:
 
 Použiji interní PULL-UP rezistory, takže není potřeba externí elektronika.
 
+Pro připojení jednotlivých tlačítek k mikrokontroléru Raspberry Pi Pico W byly na desku připájeny pinové lišty. Ty umožňují využití nasouvacích dupont vodičů, díky čemuž není nutné pájet vodiče přímo k desce mikrokontroléru.
+Toto řešení bylo zvoleno především z důvodu jednoduššího testování zapojení, lepší přehlednosti a možnosti snadné úpravy zapojení během vývoje zařízení i při následné montáži.
+
+
+
 ### 3.3 3D tištěné pouzdro
 
 Návrh pouzra zatím není dokončený, návrh probíhá ve Fusion 360, tisk ještě neproběhl. Návrh aktuálně obsahuje:
