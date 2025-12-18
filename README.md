@@ -121,7 +121,6 @@ Používám CircuitPython a knihovny:
 
 - `adafruit_hid.keyboard`
 - `adafruit_hid.keycode`
-- Debouncer pro filtraci stisku tlačítek
 
 ### 4.2 Základní funkce programu
 
@@ -131,7 +130,7 @@ Můj software umí:
 - sledovat jejich stav (stisk/pustění)
 - odesílat zvolené HID příkazy při stisku
 - ošetřit zákmity (debounce)
-- správně odeslat kombinaci více kláves (např. CTRL + SHIFT)
+- správně odeslat kombinaci více kláves 
 
 Software jsem již testoval pomocí náhradních tlačítek na breadboardu — chování je stabilní a funkční.
 
@@ -180,12 +179,11 @@ V druhé části školního roku plánuji:
 
 - dokončit finální CAD model pouzdra
 - vytisknout pouzdro na 3D tiskárně
-- zakoupit nebo připravit vodiče a konektory
-- připájet vodiče k tlačítkům i mikrokontroléru
+- připájet vodiče k tlačítkům a připojit k mikrokontroléru
 - provést finální montáž button boxu
 - otestovat funkčnost při běžném používání
 - optimalizovat software podle reálného testování
-- vypracovat dokumentaci a vložit ji na GitHub
+
 
 ---
 
