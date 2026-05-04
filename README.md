@@ -1,4 +1,5 @@
-# Ročníková práce: Tvorba vlastní macro klávesnice (Button boxu pro hry)
+# Ročníková práce: 
+# Tvorba vlastní macro klávesnice (Button boxu pro hry)
 
 **Autor:** Michal Novák  
 **Školní rok:** 2025/2026  
@@ -77,3 +78,16 @@ Po fyzické montáži tlačítek do krabičky a propojení s Raspberry Pi Pico W
 ## 6. Závěr
 
 Ročníková práce byla úspěšně dokončena a všechny stanovené cíle byly splněny. Podařilo se mi navrhnout, naprogramovat a fyzicky sestavit plně funkční macro klávesnici. Změna plánu z 3D tisku na úpravu hotové plastové krabičky se ukázala jako efektivní krok, který urychlil montáž a zajistil prototypu profesionální a robustní vzhled. Zařízení nyní aktivně využívám při hraní simulátorů, čímž projekt splnil svůj původní praktický účel. Práce mi přinesla cenné zkušenosti s jazykem CircuitPython, USB komunikací a praktickou elektronikou.
+
+Citace:
+How to Build a Pico Macro Pad. Online. 2021. Dostupné z: https://www.hackster.io/1NextPCB/how-to-build-a-pico-macro-pad-3638e6. [cit. 2025-12-01].
+
+A made a Raspberry Pi Pico Macro Board!. Online. 2020. Dostupné z: https://www.reddit.com/r/raspberry_pi/comments/n2s3i8/a_made_a_raspberry_pi_pico_macro_board/. [cit. 2025-12-01].
+
+Raspberry Pi Pico - DIY Macro Keyboard. Online. Novaspirit Tech. 2021. Dostupné z: https://www.youtube.com/watch?v=aEWptdD32iA. [cit. 2025-12-01].
+
+GOOGLE. Gemini [software]. Verze z 17. prosince 2025. Mountain View: Google, 2025 [cit. 2025-12-17]. Dostupné z: https://gemini.google.com
+
+Wired USB keyboard, mouse, controller to Bluetooth w/ $6 Raspberry Pi Pico W. Online. Kenjinerd. 2025. Dostupné z: https://www.youtube.com/watch?v=YuHbTrccshw. [cit. 2025-12-01].
+
+Raspberry Pi. Online. Dostupné z: https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#pico-1-family. [cit. 2025-12-13].
