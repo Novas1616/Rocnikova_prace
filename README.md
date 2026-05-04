@@ -1,213 +1,79 @@
-# Ročníková práce
+# Ročníková práce: Tvorba vlastní macro klávesnice (Button boxu pro hry)
 
 **Autor:** Michal Novák  
 **Školní rok:** 2025/2026  
-
-**Tvorba vlastní macro klávesnice / Button boxu pro hry**
 
 ---
 
 ## Úvod
 
-Tématem mé ročníkové práce je návrh a tvorba vlastní macro klávesnice — často označované jako button box — která bude sloužit pro ovládání závodních her a dalších aplikací. Cílem je vytvořit zařízení, které umožní odesílání klávesových zkratek nebo sekvencí kláves jediným stiskem fyzického tlačítka.
+Tématem mé ročníkové práce byl návrh a tvorba vlastní macro klávesnice — často označované jako button box — která slouží pro ovládání závodních her a dalších aplikací. Cílem bylo vytvořit zařízení, které umožní odesílání klávesových zkratek nebo sekvencí kláves jediným stiskem fyzického tlačítka.
 
-Rozhodl jsem se pro tento projekt proto, že mě dlouhodobě zajímá elektronika, programování mikrokontrolérů a využití 3D tisku v praxi. Komerční macro panely jsou často drahé nebo nenabízejí takové možnosti přizpůsobení, jaké potřebuji při hraní závodních simulátorů. Vytvořením vlastního řešení získám praktické zkušenosti v několika technických oblastech.
-
----
+Rozhodl jsem se pro tento projekt proto, že mě dlouhodobě zajímá elektronika a programování mikrokontrolérů v praxi. Komerční macro panely jsou často drahé nebo nenabízejí takové možnosti přizpůsobení, jaké potřebuji při hraní závodních simulátorů. Vytvořením vlastního řešení jsem získal praktické zkušenosti v několika technických oblastech, od návrhu obvodu až po psaní firmwaru.
 
 ## 1. Cíle ročníkové práce
 
 ### 1.1 Hardwarová část
-
-- vybrat vhodný mikrokontrolér
-- navrhnout rozmístění tlačítek
-- připravit 3D model pouzdra
-- vytisknout pouzdro a provést montáž
-- zajistit kvalitní a přehledné zapojení vodičů
+* Vybrat vhodný mikrokontrolér s podporou USB HID.
+* Navrhnout ergonomické rozmístění tlačítek.
+* Připravit a mechanicky upravit pouzdro pro zařízení.
+* Zajistit kvalitní a přehledné zapojení vodičů a provést finální montáž.
 
 ### 1.2 Softwarová část
-
-- naučit se pracovat s USB HID protokolem
-- naprogramovat mikrokontrolér tak, aby se choval jako klávesnice
-- vytvořit jednoduchou správu makro funkcí
-- implementovat debounce a případné zpoždění mezi stisky
-- otestovat fungování na Windows
+* Naučit se pracovat s USB HID protokolem.
+* Naprogramovat mikrokontrolér tak, aby se choval jako běžná klávesnice.
+* Vytvořit efektivní správu makro funkcí a optimalizovat kód.
+* Implementovat ošetření zákmitů (debounce) a zpoždění mezi stisky.
 
 ### 1.3 Testování a ladění
-
-- ověřit funkčnost v závodních hrách
-- provést dlouhodobé testy spolehlivosti
-- analyzovat případné problémy a optimalizovat kód
-
----
+* Ověřit funkčnost v reálném provozu a v závodních hrách.
+* Analyzovat případné problémy a doladit latenci stisků.
 
 ## 2. Teoretické pozadí
 
 ### 2.1 Makra a jejich využití
-
-Makro je sekvence stisků kláves nebo příkazů, která se vykoná automaticky při stisku tlačítka. Ve hrách se používá například k přepínání kamer, resetu vozidla, zapnutí světel nebo aktivaci funkcí bez nutnosti mačkat více kláves najednou.
+Makro je sekvence stisků kláves nebo příkazů, která se vykoná automaticky při stisku tlačítka. Ve hrách se používá například k přepínání kamer, resetu vozidla, zapnutí světel nebo aktivaci funkcí bez nutnosti mačkat více kláves najednou na standardní klávesnici.
 
 ### 2.2 HID protokol
-
-Aby se button box choval jako klávesnice, je potřeba implementovat USB HID standard. Ten definuje:
-
-- jakým způsobem zařízení komunikuje
-- jak vypadají datové struktury (HID reporty)
-- jak OS reaguje na stisk a uvolnění kláves
-
-Výhodou HID je, že není nutná instalace ovladačů.
+Aby se button box choval jako klávesnice, bylo potřeba implementovat **USB HID** (Human Interface Device) standard. Ten definuje, jakým způsobem zařízení komunikuje, jak vypadají datové struktury (tzv. HID reporty) a jak operační systém reaguje na stisk a uvolnění kláves. Zásadní výhodou HID je, že nevyžaduje instalaci žádných externích ovladačů.
 
 ### 2.3 Mikrokontrolér RP2040
-
-Zvolil jsem Raspberry Pi Pico W z důvodů:
-
-- nativní USB
-- nízká cena
-- dostupná dokumentace
-- výborná podpora MicroPythonu, CircuitPythonu i C/C++
-- možnost připojení až desítek vstupů
-
-Tento mikrokontrolér je ideální pro malé HID projekty jako moje makro klávesnice.
+Zvolil jsem mikrokontrolér **Raspberry Pi Pico W** z těchto důvodů:
+* Nativní podpora USB komunikace přímo na čipu.
+* Nízká pořizovací cena a dostupná dokumentace.
+* Výborná podpora MicroPythonu, CircuitPythonu i C/C++.
+* Dostatek GPIO vstupů pro připojení tlačítek.
 
 ### 2.4 CircuitPython
+Pro programování jsem využil **CircuitPython**, což je verze programovacího jazyka Python optimalizovaná pro mikrokontroléry. Umožňuje rychlý vývoj přímo na zařízení bez nutnosti složitého kompilování. Díky připravené knihovně `adafruit_hid` pro emulaci klávesnice bylo možné snadno řešit odesílání sekvencí kláves a testovat chování programu v reálném čase.
 
-Pro programování mikrokontroléru Pico W používám CircuitPython, což je verze programovacího jazyka Python optimalizovaná pro mikrokontroléry. CircuitPython umožňuje rychlý a přehledný vývoj programu přímo na zařízení, bez nutnosti složitého nízkoúrovňového programování. Díky tomu je možné snadno ovládat vstupy a výstupy, číst stisky tlačítek a odesílat je do počítače jako klávesové zkratky.
+## 3. Návrh a konstrukce zařízení
 
-Použití CircuitPython mi umožňuje:
+### 3.1 Rozmístění a zapojení tlačítek
+Zařízení je osazeno celkem **7 tlačítky**, každé je přiřazeno k jiné funkci nebo makru. Rozmístění bylo navrženo tak, aby bylo pohodlné při používání jednou rukou. 
 
-- rychle implementovat funkce pro ovládání tlačítek a makra,
-- využít připravené knihovny, například `adafruit_hid`, pro emulaci klávesnice a myši,
-- jednoduše řešit problémy se zákmity tlačítek (debounce) a správné odesílání sekvencí kláves,
-- testovat a upravovat program během vývoje, což urychluje ladění a ověřování funkčnosti.
+Každé tlačítko je jednou stranou připojeno na digitální vstup (GPIO) Pico W a druhou stranou na společnou zem (GND). V softwaru jsou aktivovány **interní PULL-UP rezistory**, takže nebylo potřeba osazovat žádnou externí elektroniku. Pro minimalizaci kabeláže uvnitř šasi byla použita metoda **"Common Ground" (společná zem)**, kdy jsou zemnící kontakty všech tlačítek propojeny mezi sebou a do mikrokontroléru vede pouze jeden společný zemnící vodič.
 
-Díky CircuitPythonu jsem mohl provést první praktické testy tlačítka ještě před samotným sestavením celé krabičky, a ověřit tak základní fungování softwaru a komunikaci přes USB HID.
+Pro připojení tlačítek k desce Raspberry Pi Pico W byly využity připájené pinové lišty a dupont vodiče, což usnadnilo testování a případné úpravy zapojení během montáže.
 
----
+### 3.2 Konstrukce pouzdra (Šasi)
+Ačkoliv původní plán počítal s 3D tiskem pouzdra, v průběhu realizace došlo k optimalizaci návrhu. Pro finální prototyp jsem se rozhodl využít **hotovou plastovou přístrojovou krabičku** vhodných rozměrů. Toto řešení se ukázalo jako praktičtější z hlediska mechanické odolnosti a rychlosti konstrukce. Do čelního panelu krabičky jsem přesně rozměřil a vyvrtal otvory pro tlačítka a do boční stěny byl vyříznut otvor pro protažení USB kabelu.
 
-## 3. Návrh zařízení
+## 4. Softwarová realizace
 
-### 3.1 Rozmístění tlačítek
+### 4.1 Základní struktura a knihovny
+Kód využívá knihovny `adafruit_hid.keyboard` a `adafruit_hid.keycode`. Software úspěšně inicializuje 7 fyzických tlačítek, neustále ve smyčce čte jejich stav a ošetřuje mechanické zákmity (debounce) pomocí časových prodlev, aby nedocházelo k nechtěným dvojstiskům.
 
-Zařízení bude mít celkem 6 tlačítek, každé přiřazené k jiné funkci. Rozmístění je navrženo tak, aby bylo pohodlné při používání jednou rukou.
+### 4.2 Optimalizace kódu
+Během vývoje byl program optimalizován. Namísto psaní samostatných podmínek pro každé tlačítko zvlášť jsem kód přepsal s využitím **polí (seznamů) a cyklů**. Tlačítka i jim přiřazené klávesové zkratky (např. CTRL + F13 až F19) jsou uloženy v seznamech. Program tak ve smyčce prochází jednotlivé piny a v případě detekce stisku odešle příslušný HID report. Tento přístup výrazně zkrátil délku kódu a zjednodušil případné budoucí přidávání dalších tlačítek.
 
-### 3.2 Zapojení
+## 5. Testování a uvedení do provozu
 
-Každé tlačítko bude:
+Po fyzické montáži tlačítek do krabičky a propojení s Raspberry Pi Pico W proběhlo finální testování na PC s operačním systémem Windows. 
+* Zařízení je po připojení okamžitě automaticky detekováno jako běžná klávesnice.
+* Úspěšně bylo otestováno odesílání jednoduchých kláves, složitějších klávesových zkratek i delších sekvencí kláves (maker).
+* Dlouhodobý test v závodních hrách potvrdil, že zařízení funguje stabilně, latence je neznatelná a mechanické provedení krabičky bez problémů odolává běžnému používání.
 
-- jednou stranou připojené na GND
-- druhou na digitální vstup Pico W
+## 6. Závěr
 
-Použiji interní PULL-UP rezistory, takže není potřeba externí elektronika.
-
-Pro připojení jednotlivých tlačítek k mikrokontroléru Raspberry Pi Pico W byly na desku připájeny pinové lišty. Ty umožňují využití nasouvacích dupont vodičů, díky čemuž není nutné pájet vodiče přímo k desce mikrokontroléru.
-Toto řešení bylo zvoleno především z důvodu jednoduššího testování zapojení, lepší přehlednosti a možnosti snadné úpravy zapojení během vývoje zařízení i při následné montáži.
-
-
-
-### 3.3 3D tištěné pouzdro
-
-Návrh pouzra zatím není dokončený, návrh probíhá ve Fusion 360, tisk ještě neproběhl. Návrh aktuálně obsahuje:
-
-- přední panel s otvory pro tlačítka
-
-- zadní víko na šroubky
-
-V dalším období budu pouzdro dolaďovat a poté vytisknu finální verzi.
-
----
-
-## 4. Softwarová část — hotová k pololetí
-
-K pololetí mám hotovou prakticky kompletní softwarovou část projektu, což byla jedna z hlavních priorit první části roku.
-
-### 4.1 Použité knihovny
-
-Používám CircuitPython a knihovny:
-
-- `adafruit_hid.keyboard`
-- `adafruit_hid.keycode`
-
-### 4.2 Základní funkce programu
-
-Můj software umí:
-
-- inicializovat 6 fyzických tlačítek
-- sledovat jejich stav (stisk/pustění)
-- odesílat zvolené HID příkazy při stisku
-- ošetřit zákmity (debounce)
-- správně odeslat kombinaci více kláves 
-
-Software jsem již testoval pomocí náhradních tlačítek na breadboardu — chování je stabilní a funkční.
-
-### 4.3 Ověření funkčnosti na PC
-
-Pico W funguje jako běžná klávesnice, počítač ho detekuje automaticky bez ovladačů. Úspěšně jsem otestoval:
-
-- odesílání jednoduchých kláves
-- klávesové zkratky
-- sekvence kláves
-- makra pro hry
-
-Chová se přesně podle očekávání.
-
----
-
-## 5. Současný stav projektu k pololetí
-
-V této fázi mám:
-
-- z větší části připravený software
-- firmware umí odesílat makra
-- funguje 6 vstupů
-- hotové ošetření zákmity i správné odesílání reportů
-- připraveno pro rozšíření funkcí
-
-Navržené hardware řešení (teoreticky):
-
-- rozvržené piny
-- určený typ tlačítek
-- proběhl první test odesílání macra do hry s testovacím kódem
-
-
-Zatím chybí fyzická realizace:
-- dokončení návrhu a 3D tisk pouzdra
-- pájení kabeláže
-- montáž celku
-
-Toto bude hlavní náplní druhého pololetí.
-
----
-
-## 6. Další postup (druhé pololetí)
-
-V druhé části školního roku plánuji:
-
-- dokončit finální CAD model pouzdra
-- vytisknout pouzdro na 3D tiskárně
-- připájet vodiče k tlačítkům a připojit k mikrokontroléru
-- provést finální montáž button boxu
-- otestovat funkčnost při běžném používání
-- optimalizovat software podle reálného testování
-
-
----
-
-## Závěr
-
-K prvnímu pololetí jsem splnil všechny plánované softwarové cíle a mám funkční základ celého zařízení. Button box zatím není fyzicky sestavený, ale hardwarová část je navržená a připravená k realizaci.
-
-Druhé pololetí bude zaměřené hlavně na praktickou konstrukci krabičky, 3D tisk a fyzické zapojení celého systému. Po dokončení očekávám, že zařízení bude plně funkční a použitelné v závodních hrách i běžném použití.
-
-## Citace:
-
-How to Build a Pico Macro Pad. Online. 2021. Dostupné z: https://www.hackster.io/1NextPCB/how-to-build-a-pico-macro-pad-3638e6. [cit. 2025-12-01].
-
-A made a Raspberry Pi Pico Macro Board!. Online. 2020. Dostupné z: https://www.reddit.com/r/raspberry_pi/comments/n2s3i8/a_made_a_raspberry_pi_pico_macro_board/. [cit. 2025-12-01].
-
-Raspberry Pi Pico - DIY Macro Keyboard. Online. Novaspirit Tech. 2021. Dostupné z: https://www.youtube.com/watch?v=aEWptdD32iA. [cit. 2025-12-01].
-
-GOOGLE. Gemini [software]. Verze z 17. prosince 2025. Mountain View: Google, 2025 [cit. 2025-12-17]. Dostupné z: https://gemini.google.com
-
-Wired USB keyboard, mouse, controller to Bluetooth w/ $6 Raspberry Pi Pico W. Online. Kenjinerd. 2025. Dostupné z: https://www.youtube.com/watch?v=YuHbTrccshw. [cit. 2025-12-01].
-
-Raspberry Pi. Online. Dostupné z: https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#pico-1-family. [cit. 2025-12-13].
+Ročníková práce byla úspěšně dokončena a všechny stanovené cíle byly splněny. Podařilo se mi navrhnout, naprogramovat a fyzicky sestavit plně funkční macro klávesnici. Změna plánu z 3D tisku na úpravu hotové plastové krabičky se ukázala jako efektivní krok, který urychlil montáž a zajistil prototypu profesionální a robustní vzhled. Zařízení nyní aktivně využívám při hraní simulátorů, čímž projekt splnil svůj původní praktický účel. Práce mi přinesla cenné zkušenosti s jazykem CircuitPython, USB komunikací a praktickou elektronikou.
