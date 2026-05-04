@@ -7,17 +7,21 @@ from adafruit_hid.keycode import Keycode
 
 kb = Keyboard(usb_hid.devices)
 
+# Definice 7 tlačítek na pinech GP0 až GP6
 btn1 = digitalio.DigitalInOut(board.GP0)
 btn2 = digitalio.DigitalInOut(board.GP1)
 btn3 = digitalio.DigitalInOut(board.GP2)
 btn4 = digitalio.DigitalInOut(board.GP3)
 btn5 = digitalio.DigitalInOut(board.GP4)
 btn6 = digitalio.DigitalInOut(board.GP5)
+btn7 = digitalio.DigitalInOut(board.GP6)
 
-for btn in (btn1, btn2, btn3, btn4, btn5, btn6):
+# Nastavení vstupů s pull-up rezistory
+for btn in (btn1, btn2, btn3, btn4, btn5, btn6, btn7):
     btn.switch_to_input(pull=digitalio.Pull.UP)
 
-last1 = last2 = last3 = last4 = last5 = last6 = True
+# Inicializace stavů tlačítek
+last1 = last2 = last3 = last4 = last5 = last6 = last7 = True
 
 while True:
     v1 = btn1.value
@@ -26,6 +30,7 @@ while True:
     v4 = btn4.value
     v5 = btn5.value
     v6 = btn6.value
+    v7 = btn7.value
 
     if last1 and not v1:
         kb.press(Keycode.CONTROL, Keycode.F13)
@@ -57,11 +62,17 @@ while True:
         kb.release_all()
         time.sleep(0.15)
 
+    if last7 and not v7:
+        kb.press(Keycode.CONTROL, Keycode.F19)
+        kb.release_all()
+        time.sleep(0.15)
+
     last1 = v1
     last2 = v2
     last3 = v3
     last4 = v4
     last5 = v5
     last6 = v6
+    last7 = v7
 
     time.sleep(0.01)
