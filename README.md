@@ -82,6 +82,9 @@ Po fyzické montáži tlačítek do krabičky a propojení s Raspberry Pi Pico W
 * Úspěšně bylo otestováno odesílání jednoduchých kláves, složitějších klávesových zkratek i delších sekvencí kláves (maker).
 * Dlouhodobý test v závodních hrách potvrdil, že zařízení funguje stabilně, latence je neznatelná a mechanické provedení krabičky bez problémů odolává běžnému používání.
 
+## 5.1 Praktické využití v simulátoru Assetto Corsa
+Hlavním testovacím prostředím pro hotový button box byl závodní simulátor Assetto Corsa. Pro konfiguraci ovládání jsem využil komunitní rozšíření Content Manager, které umožňuje pokročilé mapování vstupů nad rámec standardního herního menu. Díky tomu, že Windows detekuje zařízení jako standardní HID klávesnici, bylo přiřazení funkcí k jednotlivým tlačítkům (např. DRS, ovládání ABS, kontrola trakce, start vozidla nebo aktivace světel) otázkou několika vteřin. V praxi se potvrdilo, že fyzická tlačítka výrazně zvyšují imerzi a bezpečnost při jízdě, protože jezdec nemusí hledat klávesy na klasické klávesnici a může se plně soustředit na trať.
+
 ## 6. Závěr
 
 Ročníková práce byla úspěšně dokončena a všechny stanovené cíle byly splněny. Podařilo se mi navrhnout, naprogramovat a fyzicky sestavit plně funkční macro klávesnici. Změna plánu z 3D tisku na úpravu hotové plastové krabičky se ukázala jako efektivní krok, který urychlil montáž a zajistil prototypu profesionální a robustní vzhled. Zařízení nyní aktivně využívám při hraní simulátorů, čímž projekt splnil svůj původní praktický účel. Práce mi přinesla cenné zkušenosti s jazykem CircuitPython, USB komunikací a praktickou elektronikou.
