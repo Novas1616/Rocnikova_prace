@@ -86,6 +86,13 @@ Po fyzické montáži tlačítek do krabičky a propojení s Raspberry Pi Pico W
 
 Ročníková práce byla úspěšně dokončena a všechny stanovené cíle byly splněny. Podařilo se mi navrhnout, naprogramovat a fyzicky sestavit plně funkční macro klávesnici. Změna plánu z 3D tisku na úpravu hotové plastové krabičky se ukázala jako efektivní krok, který urychlil montáž a zajistil prototypu profesionální a robustní vzhled. Zařízení nyní aktivně využívám při hraní simulátorů, čímž projekt splnil svůj původní praktický účel. Práce mi přinesla cenné zkušenosti s jazykem CircuitPython, USB komunikací a praktickou elektronikou.
 
+## 7. Použité nástroje a zdroje
+
+Při tvorbě projektu byly využity následující nástroje:
+* **Hardware:** Raspberry Pi Pico W, mechanická tlačítka, plastová přístrojová krabička.
+* **Software:** CircuitPython, AutoHotkey v2, Visual Studio Code.
+* **AI Asistence:** Konzultace textové část dokumentace a schéma zapojení tlačítek byly vytvořeny s využitím modelu **Gemini AI** (Google).
+  
 ## Citace:
 How to Build a Pico Macro Pad. Online. 2021. Dostupné z: https://www.hackster.io/1NextPCB/how-to-build-a-pico-macro-pad-3638e6. [cit. 2025-12-01].
 
