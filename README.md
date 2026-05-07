@@ -68,9 +68,12 @@ Kód využívá knihovny `adafruit_hid.keyboard` a `adafruit_hid.keycode`. Softw
 ### 4.2 Optimalizace kódu
 Během vývoje byl program optimalizován. Namísto psaní samostatných podmínek pro každé tlačítko zvlášť jsem kód přepsal s využitím **polí (seznamů) a cyklů**. Tlačítka i jim přiřazené klávesové zkratky (např. CTRL + F13 až F19) jsou uloženy v seznamech. Program tak ve smyčce prochází jednotlivé piny a v případě detekce stisku odešle příslušný HID report. Tento přístup výrazně zkrátil délku kódu a zjednodušil případné budoucí přidávání dalších tlačítek.
 
+### 4.3 Rozšíření funkcionality pro produktivitu (Stream Deck)
+Kromě primárního využití v herních simulátorech lze toto zařízení díky emulaci USB HID využít také jako efektivní nástroj pro zvýšení produktivity v prostředí Windows (tzv. Stream Deck). V aktuální verzi firmwaru je každému ze sedmi tlačítek přiřazena specifická kombinace kláves CTRL + F13 až F19. Volba těchto funkčních kláves je záměrná, protože se běžně na standardních klávesnicích nevyskytují, což eliminuje riziko nechtěných konfliktů s ovládáním jiných programů. V systému Windows lze tyto signály snadno využít pro spouštění libovolných aplikací, webových prohlížečů nebo systémových příkazů. Toho lze docílit buď přiřazením dané kombinace přímo ve vlastnostech zástupce aplikace na ploše, nebo pomocí skriptovacího softwaru AutoHotkey, který na pozadí zachytí stisknutí tlačítka a provede nadefinovanou akci, jako je například otevření komunikačního nástroje nebo správa oken.
+
 ## 5. Testování a uvedení do provozu
 
-Po fyzické montáži tlačítek do krabičky a propojení s Raspberry Pi Pico W proběhlo finální testování na PC s operačním systémem Windows. 
+Po fyzické montáži tlačítek do krabičky a propojení s Raspberry Pi Pico W proběhlo finální testování na PC s operačním systémem Windows 11. 
 * Zařízení je po připojení okamžitě automaticky detekováno jako běžná klávesnice.
 * Úspěšně bylo otestováno odesílání jednoduchých kláves, složitějších klávesových zkratek i delších sekvencí kláves (maker).
 * Dlouhodobý test v závodních hrách potvrdil, že zařízení funguje stabilně, latence je neznatelná a mechanické provedení krabičky bez problémů odolává běžnému používání.
